@@ -8,10 +8,10 @@ async function resize(url) {
     image.resize(100, Jimp.AUTO)
       .getBuffer(Jimp.MIME_JPEG, (error, stream) => {
         if (error) {
-          ctx.log("error");
+          ctx.log("error...");
           ctx.done(error);
         } else {
-          ctx.log("done");
+          ctx.log("done...");
           ctx.done(null, stream);
         }
       });
@@ -25,7 +25,6 @@ app.storageBlob('thumbnails', {
     context.log(`Storage blob 'process-blob-image' url:${context.triggerMetadata.uri}, size:${blob.length} bytes`);
     const url = context.triggerMetadata.uri;
     const ext = url.split('.').pop();
-
     if (!url) {
       return;
     } else if (!ext || !availableExt.includes(ext.toLowerCase())) {
