@@ -1,10 +1,11 @@
 {
-  "name": "",
+  "name": "azure-thumbnails",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/functions/*.js",
+  "description": "Azure function to generate image thumbnails using blob triggers.",
+  "main": "src/functions/thumbnails.js",
   "scripts": {
     "start": "func start",
+    "build": "npm install",
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
